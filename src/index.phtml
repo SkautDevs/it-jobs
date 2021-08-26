@@ -1,0 +1,65 @@
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<title>Seznam IT jobů</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet"
+		  href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+		  integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
+		  crossorigin="anonymous"
+	>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="public/skaut.css">
+	<link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+<header>
+	<div>
+		<a href="https://skaut.cz/" target="_blank">
+			<img class="header-img" src="public/SKAUT_logo.svg" alt="skaut logo">
+		</a>
+	</div>
+	<p>
+		IT joby nabízí spoustu příležitostí, jak se ve skautu realizovat!
+	</p>
+</header>
+<main>
+	<ul class="event-list">
+        <?php /** @var array $data */
+
+        foreach ($data as $p): ?>
+			<li class="event card">
+				<div class="mark-wrap">
+                    <?php foreach ($p['config']['tags'] as $tag): ?>
+						<mark><?= $tag ?></mark>
+                    <?php endforeach; ?>
+				</div>
+				<h3><?= $p['config']['name'] ?></h3>
+				<div>
+                    <?php foreach ($p['config']['links'] as $link): ?>
+						<p><i class="fa fa-link"></i>
+							<a href="<?= $link['uri'] ?>"><?= $link['type'] ?></a></p>
+                    <?php endforeach; ?>
+				</div>
+				<div>
+                    <?php foreach ($p['config']['maintainers'] as $maintainer): ?>
+						<p><i class="fa fa-envelope"></i>
+							<a href="mailto:<?= $maintainer['email'] ?>"><?= $maintainer['name'] ?></a></p>
+                    <?php endforeach; ?>
+				</div>
+				<p><?= $p['config']['description'] ?></p>
+				<div>
+					<p>Issues:</p>
+                    <?php foreach ($p['issues'] as $issue): ?>
+						<p><b><?= $issue['title'] ?></b> <?= $issue['description'] ?></b></p>
+                    <?php endforeach; ?>
+				</div>
+			</li>
+        <?php endforeach; ?>
+	</ul>
+</main>
+<footer>
+	<a href="https://devs.skauting.cz">With ❤ created by Lung</a>
+</footer>
+</body>
+</html>

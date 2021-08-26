@@ -1,0 +1,21 @@
+{
+    "name": "skaut/it-jobs",
+    "description": "Scout jobs frontend transformer",
+    "keywords": [
+        "system",
+        "scouts",
+        "skaut"
+    ],
+    "homepage": "https://github.com/SkautDevs/it-jobs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lung",
+            "email": "lung@skaut.cz"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*"
+    },
+}
