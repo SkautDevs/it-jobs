@@ -70,29 +70,7 @@ menu {
     list-style: none;
 }
 
-li.menu-item {
-    background: var(--primary);
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-    height: inherit;
-    padding: 0.4em 0.8em;
-    margin: 1rem 0.8rem;
-}
-
-li.menu-item:hover {
-    background: var(--darker);
-}
-
-li.menu-item > a:link,
-li.menu-item > a:visited {
-    color: white;
-    text-decoration: none;
-
-}
-
-ul.event-list {
+ul.project-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -100,9 +78,9 @@ ul.event-list {
     max-width: 84rem;
 }
 
-li.event {
+li.project {
     list-style-type: none;
-    width: 18rem;
+    width: 24rem;
     min-height: 24rem;
     margin: 0.5rem 1rem;
     padding: 1rem 0.5rem;
@@ -111,30 +89,6 @@ li.event {
     align-items: center;
     background-color: white;
     border-radius: 1rem;
-}
-
-li.event-canceled > p {
-    text-decoration: line-through;
-}
-
-li.event-canceled > h3 {
-    position: relative;
-}
-
-li.event-canceled > h3:after {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 50%;
-    right: 0;
-    border-top: 2px solid;
-    border-color: inherit;
-
-    -webkit-transform: rotate(-5deg);
-    -moz-transform: rotate(-5deg);
-    -ms-transform: rotate(-5deg);
-    -o-transform: rotate(-5deg);
-    transform: rotate(-5deg);
 }
 
 .card {
@@ -151,6 +105,7 @@ div.mark-wrap {
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 mark {
@@ -160,48 +115,12 @@ mark {
     margin: 0.2rem 0.4rem;
 }
 
-mark.mark-red {
-    background-color: red;
-}
-
 p {
-    margin: 0 0.5rem 1rem;
+    margin: 0 0.5rem 0.5rem;
     text-align: center;
-}
-
-div.event-img-wrap {
-    margin: 2rem;
-    max-width: 10rem;
-    max-height: 10rem;
-}
-
-img.event-img {
-    width: 100%;
+    line-height: 1.5;
 }
 
 a.pure-button-primary {
     background: var(--primary);
-}
-
-.pin {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin-left: 115px;
-
-    border-radius: 50%;
-    border: 8px solid #fff;
-    width: 8px;
-    height: 8px;
-}
-
-.pin::after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    bottom: -30px;
-    left: -6px;
-    border: 10px solid transparent;
-    border-top: 17px solid #fff;
 }

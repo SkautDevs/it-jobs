@@ -24,11 +24,11 @@
 	</p>
 </header>
 <main>
-	<ul class="event-list">
+	<ul class="project-list">
         <?php /** @var array $data */
 
         foreach ($data as $p): ?>
-			<li class="event card">
+			<li class="project card">
 				<div class="mark-wrap">
                     <?php foreach ($p['config']['tags'] as $tag): ?>
 						<mark><?= $tag ?></mark>
@@ -36,10 +36,12 @@
 				</div>
 				<h3><?= $p['config']['name'] ?></h3>
 				<div>
-                    <?php foreach ($p['config']['links'] as $link): ?>
-						<p><i class="fa fa-link"></i>
-							<a href="<?= $link['uri'] ?>"><?= $link['type'] ?></a></p>
-                    <?php endforeach; ?>
+					<p>
+                        <?php foreach ($p['config']['links'] as $link): ?>
+							<i class="fa fa-link"></i>
+							<a href="<?= $link['uri'] ?>"><?= $link['type'] ?></a>
+                        <?php endforeach; ?>
+					</p>
 				</div>
 				<div>
                     <?php foreach ($p['config']['maintainers'] as $maintainer): ?>
